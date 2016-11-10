@@ -49,7 +49,7 @@ class MuseumObjectDetailViewController: UIViewController {
             text += "Date: \(individualObject.dateText)\n"
         }
         if individualObject.slug != "" {
-            text += "Description: \(individualObject.slug)\n"
+            text += "Slug: \(individualObject.slug)\n"
         }
         if individualObject.collectionCode != "" {
             text += "Collection Code: \(individualObject.collectionCode)\n"
