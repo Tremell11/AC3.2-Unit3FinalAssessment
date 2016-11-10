@@ -29,8 +29,10 @@ internal struct VictoriaObject {
             
             guard let response = jsonData as? [String: Any],
                 let records = response["records"] as? [String: Any],
-                let arrayOfFieldsDictionary = records.first as? [String: Any],
-                let fieldsDictionary = arrayOfFieldsDictionary["fields"] as? [String: Any] else {
+                let arrayOfDictionaries = records as? [[String: Any]],
+                let finalDictionary = arrayOfDictionaries[0] as? [String: Any],
+                let fieldsDictionary = finalDictionary["fields"] as? [String: Any]
+                else {
                     throw VictoriaObjectModelParseError.fieldsDictionary
             }
             print("@@@@Got fieldsDictionary@@@@")
