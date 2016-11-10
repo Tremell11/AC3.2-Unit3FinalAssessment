@@ -17,6 +17,7 @@ class MuseumTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMuseum()
+        self.navigationItem.title = "Victoria and Albert Museum"
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,20 +111,25 @@ class MuseumTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell {
-            if let cellIndexPath = self.tableView.indexPath(for: cell) {
-                if let dvc = segue.destination as? DetailViewController {
-                    if segue.identifier == "museumSegue" {
-                        let museumItem = museums[cellIndexPath.row]
-                        let imageID = museumItem.primaryImageID
-                        let firstSixOfImageID = imageID[imageID.startIndex..<imageID.index(imageID.startIndex, offsetBy: 6)]
-                        var imageEndpoint: String {
-                            return "http://media.vam.ac.uk/media/thira/collection_images/\(firstSixOfImageID)/\(imageID).jpg"
-                        }
-                        
-                        dvc.fullSizeImageString = imageEndpoint
+            let cellIndexPath = self.tableView.indexPath(for: cell)
+            if let dvc = segue.destination as? DetailViewController {
+                if segue.identifier == "museumSegue" {
+                    let museumItem = museums[cellIndexPath!.row]
+                    let imageID = museumItem.primaryImageID
+                    let firstSixOfImageID = imageID[imageID.startIndex..<imageID.index(imageID.startIndex, offsetBy: 6)]
+                    var imageEndpoint: String {
+                        return "http://media.vam.ac.uk/media/thira/collection_images/\(firstSixOfImageID)/\(imageID).jpg"
                     }
+                    
+                    dvc.fullSizeImageString = imageEndpoint
+                    dvc.artist = museumItem.artist
+                    dvc.location = museumItem.location
+                    dvc.museumNumber = museumItem.museumNumber
+                    dvc.year = String(museumItem.year)
+                    
                 }
             }
         }
+        
     }
 }

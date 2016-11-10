@@ -9,7 +9,7 @@
 import Foundation
 
 enum ParsingErrors: Error {
-    case recordsArrayError, fieldsDictError, objectError, dateTextError, placeError, titleError, primaryImageIDError
+    case recordsArrayError, fieldsDictError, objectError, dateTextError, placeError, titleError, primaryImageIDError, artistError, locationError, museumNumberError, yearError
 }
 class Museum {
     //MARK: - Properties
@@ -18,14 +18,22 @@ class Museum {
     let place: String
     let title: String
     let primaryImageID: String
+    let artist: String
+    let location: String
+    let museumNumber: String
+    let year: Int
     
     //MARK: - Initializers
-    init(object: String, dateText: String, place: String, title: String, primaryImageID: String) {
+    init(object: String, dateText: String, place: String, title: String, primaryImageID: String, artist: String, location: String, museumNumber: String, year: Int) {
         self.object = object
         self.dateText = dateText
         self.place = place
         self.title = title
         self.primaryImageID = primaryImageID
+        self.artist = artist
+        self.location = location
+        self.museumNumber = museumNumber
+        self.year = year
     }
     
     //MARK: - Methods
@@ -72,7 +80,23 @@ class Museum {
                     throw ParsingErrors.primaryImageIDError
                 }
                 
-                let museum: Museum = Museum(object: object, dateText: dateText, place: place, title: title ?? "", primaryImageID: primaryImageID)
+                guard let artist = fieldsDict["artist"] as? String else {
+                    throw ParsingErrors.artistError
+                }
+                
+                guard let location = fieldsDict["location"] as? String else {
+                    throw ParsingErrors.locationError
+                }
+                
+                guard let museumNumber = fieldsDict["museum_number"] as? String else {
+                    throw ParsingErrors.museumNumberError
+                }
+                
+                guard let year = fieldsDict["year_start"] as? Int else {
+                    throw ParsingErrors.yearError
+                }
+                
+                let museum: Museum = Museum(object: object, dateText: dateText, place: place, title: title ?? "", primaryImageID: primaryImageID, artist: artist, location: location, museumNumber: museumNumber, year: year)
                 allMuseums.append(museum)
             }
             return allMuseums
@@ -98,6 +122,18 @@ class Museum {
         }
         catch ParsingErrors.primaryImageIDError {
             print("There was an error finding the 'primary_image_id' key.")
+        }
+        catch ParsingErrors.artistError {
+            print("There was an error finding the 'artist' key.")
+        }
+        catch ParsingErrors.locationError {
+            print("There was an error finding 'location' key.")
+        }
+        catch ParsingErrors.museumNumberError {
+            print("There was an error finding the 'museum_number' key.")
+        }
+        catch ParsingErrors.yearError {
+            print("There was an error finding the 'year_start' key.")
         }
         catch {
             print("There was an unexpected error!")

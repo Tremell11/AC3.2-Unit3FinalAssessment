@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,19 +55,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sT1-dO-JLs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="479"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-xU-2DT">
+                                <rect key="frame" x="24" y="551" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhw-WT-x3g">
+                                <rect key="frame" x="24" y="580" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg2-ZC-EVn">
+                                <rect key="frame" x="24" y="609" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-bx-XhE">
+                                <rect key="frame" x="24" y="638" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AZ6-Vp-sdu" firstAttribute="top" secondItem="sT1-dO-JLs" secondAttribute="bottom" id="CTF-Ha-Cqv"/>
-                            <constraint firstItem="sT1-dO-JLs" firstAttribute="top" secondItem="RX3-PP-2PL" secondAttribute="top" id="FtP-f4-EJ7"/>
-                            <constraint firstItem="sT1-dO-JLs" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leading" id="SJM-Vo-xFB"/>
-                            <constraint firstAttribute="trailing" secondItem="sT1-dO-JLs" secondAttribute="trailing" id="zc4-EY-M6V"/>
+                            <constraint firstItem="v9V-xU-2DT" firstAttribute="top" secondItem="sT1-dO-JLs" secondAttribute="bottom" constant="8" id="2bn-4K-U6G"/>
+                            <constraint firstItem="sT1-dO-JLs" firstAttribute="top" secondItem="vyl-s7-N1r" secondAttribute="bottom" id="9wZ-2Z-h0r"/>
+                            <constraint firstItem="Gg2-ZC-EVn" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leadingMargin" constant="8" id="BP9-Vo-t56"/>
+                            <constraint firstAttribute="trailing" secondItem="sT1-dO-JLs" secondAttribute="trailing" id="DPp-Es-T3s"/>
+                            <constraint firstItem="Zhw-WT-x3g" firstAttribute="top" secondItem="v9V-xU-2DT" secondAttribute="bottom" constant="8" id="FvW-nQ-uC0"/>
+                            <constraint firstItem="Zhw-WT-x3g" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leadingMargin" constant="8" id="JBv-a0-430"/>
+                            <constraint firstItem="L6s-bx-XhE" firstAttribute="top" secondItem="Gg2-ZC-EVn" secondAttribute="bottom" constant="8" id="Qw5-7E-bJy"/>
+                            <constraint firstItem="L6s-bx-XhE" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leadingMargin" constant="8" id="W6F-a2-NAd"/>
+                            <constraint firstItem="sT1-dO-JLs" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leading" id="WAS-VV-jzh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zhw-WT-x3g" secondAttribute="trailing" constant="8" id="ZIU-j7-VJE"/>
+                            <constraint firstItem="L6s-bx-XhE" firstAttribute="top" secondItem="Gg2-ZC-EVn" secondAttribute="bottom" constant="8" id="bPK-8k-LDq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v9V-xU-2DT" secondAttribute="trailing" constant="8" id="c7a-g7-Yqd"/>
+                            <constraint firstItem="Zhw-WT-x3g" firstAttribute="top" secondItem="v9V-xU-2DT" secondAttribute="bottom" constant="8" id="ccr-0U-ZcT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gg2-ZC-EVn" secondAttribute="trailing" constant="8" id="ehd-PV-xdP"/>
+                            <constraint firstItem="Gg2-ZC-EVn" firstAttribute="top" secondItem="Zhw-WT-x3g" secondAttribute="bottom" constant="8" id="gj3-Fy-2Ou"/>
+                            <constraint firstItem="Gg2-ZC-EVn" firstAttribute="top" secondItem="Zhw-WT-x3g" secondAttribute="bottom" constant="8" id="noO-kV-63F"/>
+                            <constraint firstItem="AZ6-Vp-sdu" firstAttribute="top" secondItem="L6s-bx-XhE" secondAttribute="bottom" constant="8" id="spp-tB-t9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L6s-bx-XhE" secondAttribute="trailing" constant="8" id="v81-Jc-6aY"/>
+                            <constraint firstItem="v9V-xU-2DT" firstAttribute="leading" secondItem="RX3-PP-2PL" secondAttribute="leadingMargin" constant="8" id="yuc-wt-b2f"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="artistLabel" destination="v9V-xU-2DT" id="myv-5r-f32"/>
                         <outlet property="fullSizeImageView" destination="sT1-dO-JLs" id="YoC-zT-bHu"/>
+                        <outlet property="locationLabel" destination="Zhw-WT-x3g" id="bK4-4L-79e"/>
+                        <outlet property="museumNumberLabel" destination="Gg2-ZC-EVn" id="WxT-hp-J1g"/>
+                        <outlet property="yearLabel" destination="L6s-bx-XhE" id="Ltk-re-RfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6H6-RW-SYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
