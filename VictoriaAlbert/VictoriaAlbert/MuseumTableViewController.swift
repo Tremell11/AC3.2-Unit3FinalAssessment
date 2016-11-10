@@ -8,16 +8,19 @@
 
 import UIKit
 
-class MuseumTableViewController: UITableViewController {
+class MuseumTableViewController: UITableViewController, UISearchBarDelegate {
     //MARK: Properties
-    let apiEndpoint: String = "http://www.vam.ac.uk/api/json/museumobject/search?q=ring"
+    var searchValue: String = "ring"
+    var apiEndpoint: String {
+        return "http://www.vam.ac.uk/api/json/museumobject/search?q=\(searchValue)"
+    }
     internal var museums: [Museum] = []
     
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMuseum()
-        self.navigationItem.title = "Victoria and Albert Museum"
+        createSearchBar()
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,6 +28,26 @@ class MuseumTableViewController: UITableViewController {
     }
     
     func loadMuseum() {
+        APIRequestManager.manager.getData(apiEndpoint: apiEndpoint) { (data: Data) in
+            if let museums = Museum.turnDataIntoMuseumArray(data: data) {
+                self.museums = museums
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func createSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search for an object in the Victoria and Albert museum."
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        searchValue = text
         APIRequestManager.manager.getData(apiEndpoint: apiEndpoint) { (data: Data) in
             if let museums = Museum.turnDataIntoMuseumArray(data: data) {
                 self.museums = museums
@@ -58,8 +81,6 @@ class MuseumTableViewController: UITableViewController {
             return "http://media.vam.ac.uk/media/thira/collection_images/\(firstSixOfImageID)/\(imageID)_jpg_o.jpg"
         }
         
-        //        cell.textLabel?.text = "\(museumItem.object), \(museumItem.dateText) - \(museumItem.place)"
-        //        cell.detailTextLabel?.text = museumItem.title
         APIRequestManager.manager.getData(apiEndpoint: imageEndpoint) { (data: Data) in
             DispatchQueue.main.async {
                 cell.imageView?.image = UIImage(data: data)
@@ -67,7 +88,6 @@ class MuseumTableViewController: UITableViewController {
                 cell.detailTextLabel?.text = museumItem.title
             }
         }
-        
         return cell
     }
     

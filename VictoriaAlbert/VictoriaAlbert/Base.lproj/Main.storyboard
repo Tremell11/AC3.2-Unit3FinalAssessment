@@ -36,7 +36,9 @@
                             <outlet property="delegate" destination="4g8-km-4UO" id="ix8-qD-geo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BKM-s3-AKo"/>
+                    <navigationItem key="navigationItem" id="BKM-s3-AKo">
+                        <nil key="title"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmV-vu-Msa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
