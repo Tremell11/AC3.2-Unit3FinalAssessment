@@ -27,8 +27,6 @@ class MuseumObjectTableViewController: UITableViewController, UITextFieldDelegat
             }
         }
         self.title = "Victoria and Albert Museum: \(searchText.capitalized)"
-        
-        print("http://www.vam.ac.uk/api/json/museumobject/search?q=\(searchText)")
     }
     
     // MARK: - Table view data source

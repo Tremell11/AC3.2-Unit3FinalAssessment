@@ -53,8 +53,14 @@ class MuseumObject {
         self.slug = slug
         self.collectionCode = collectionCode
         
-        let indexTo6 = primaryImageId.index(primaryImageId.startIndex, offsetBy: 6)
-        let firstSixChars = primaryImageId.substring(to: indexTo6)
+        var firstSixChars = ""
+        
+        if primaryImageId.characters.count > 6 {
+            let indexTo6 = primaryImageId.index(primaryImageId.startIndex, offsetBy: 6)
+            firstSixChars = primaryImageId.substring(to: indexTo6)
+        } else {
+            firstSixChars = primaryImageId
+        }
         
         self.largeImage = "http://media.vam.ac.uk/media/thira/collection_images/\(firstSixChars)/\(primaryImageId).jpg"
         self.smallImage = "http://media.vam.ac.uk/media/thira/collection_images/\(firstSixChars)/\(primaryImageId)_jpg_o.jpg"
