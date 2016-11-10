@@ -17,6 +17,20 @@ class RecordTableViewController: UITableViewController, UITextFieldDelegate {
 	var searchTerm = "ring"
 	var locationDict = [String : Int]()
 	var locationArray = [String]()
+	var sorted = false
+	
+	@IBOutlet weak var sortButton: UIBarButtonItem!
+	
+	@IBAction func sortButtonTapped(_ sender: UIBarButtonItem) {
+		sorted = !sorted
+		self.tableView.reloadData()
+		if sorted {
+			sortButton.image = #imageLiteral(resourceName: "filter_filled")
+		}
+		else {
+			sortButton.image = #imageLiteral(resourceName: "filter_empty")
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -57,39 +71,56 @@ class RecordTableViewController: UITableViewController, UITextFieldDelegate {
 	// MARK: - Table view data source
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return locationDict.count
+		if sorted {
+			return locationDict.count
+		}
+		else {
+			return 1
+		}
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let recordsByLocation = records.filter { (record) -> Bool in
-			(record.place) == locationArray[section]
+		if sorted {
+			let recordsByLocation = records.filter { (record) -> Bool in
+				(record.place) == locationArray[section]
+			}
+			
+			return recordsByLocation.count }
+		else {
+			return records.count
 		}
-		
-		return recordsByLocation.count
 	}
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		guard sorted else { return nil }
 		return "\(locationArray[section])"
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "recordCell", for: indexPath)
+		var record: Record?
+		if sorted {
+			let recordsByLocation = records.filter { (record) -> Bool in
+				(record.place) == locationArray[indexPath.section]
+				}.sorted { $0.object < $1.object }
+			
+			record = recordsByLocation[indexPath.row]
+		}
+		else {
+			record = records.sorted { $0.object < $1.object } [indexPath.row]
+		}
 		
-		let recordsByLocation = records.filter { (record) -> Bool in
-			(record.place) == locationArray[indexPath.section]
-			}.sorted { $0.object < $1.object }
-		
-		let record = recordsByLocation[indexPath.row]
-		
-		cell.textLabel?.text = "\(record.object), \(record.date) - \(record.place)"
-		cell.detailTextLabel?.text = record.title
-		
-		APIRequestManager.manager.getData(endPoint: record.imageSmall ) { (data: Data?) in
-			if  let validData = data,
-				let validImage = UIImage(data: validData) {
-				DispatchQueue.main.async {
-					cell.imageView?.image = validImage
-					cell.setNeedsLayout()
+		if let recordFixed = record {
+			cell.textLabel?.text = "\(recordFixed.object), \(recordFixed.date) - \(recordFixed.place)"
+			cell.detailTextLabel?.text = recordFixed.title
+			
+			APIRequestManager.manager.getData(endPoint: recordFixed.imageSmall ) { (data: Data?) in
+				if  let validData = data,
+					let validImage = UIImage(data: validData) {
+					DispatchQueue.main.async {
+						cell.imageView?.image = validImage
+						cell.setNeedsLayout()
+					}
 				}
 			}
 		}
@@ -105,11 +136,16 @@ class RecordTableViewController: UITableViewController, UITextFieldDelegate {
 				let recordViewController: RecordViewController = segue.destination as! RecordViewController
 				let cellIndexPath: IndexPath = self.tableView.indexPath(for: tappedRecordCell)!
 				
-				let recordsByLocation = records.filter { (record) -> Bool in
-					(record.place) == locationArray[cellIndexPath.section]
-					}.sorted { $0.object < $1.object }
+				if sorted {
+					let recordsByLocation = records.filter { (record) -> Bool in
+						(record.place) == locationArray[cellIndexPath.section]
+						}.sorted { $0.object < $1.object }
+					recordViewController.recordSelected = recordsByLocation[cellIndexPath.row]
+				}
+				else {
+					recordViewController.recordSelected = records.sorted { $0.object < $1.object } [cellIndexPath.row]
+				}
 				
-				recordViewController.recordSelected = recordsByLocation[cellIndexPath.row]
 				// The below affects the title of the back button in the next view controller
 				let backItem = UIBarButtonItem()
 				backItem.title = "Back to \"\(searchTerm)\""

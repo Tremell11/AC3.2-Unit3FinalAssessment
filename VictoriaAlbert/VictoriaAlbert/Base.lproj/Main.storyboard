@@ -58,6 +58,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="8bp-Yj-r4S">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="filter_empty" id="aId-CM-oD1">
+                            <connections>
+                                <action selector="sortButtonTapped:" destination="Cw5-cq-0wV" id="OIf-dV-iCE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ulh-2p-lmQ">
                             <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="unk-CU-gVO">
                                 <rect key="frame" x="209" y="7" width="150" height="30"/>
@@ -70,6 +75,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchField" destination="unk-CU-gVO" id="jRr-Fz-6ci"/>
+                        <outlet property="sortButton" destination="aId-CM-oD1" id="xnF-20-Mdg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGn-lg-3PB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,24 +94,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="404page-complex" translatesAutoresizingMaskIntoConstraints="NO" id="a1P-91-RwQ">
-                                <rect key="frame" x="16" y="104" width="343" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="5Sf-6K-Ocs"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-9w-CpM">
-                                <rect key="frame" x="24" y="72" width="327" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-wb-LeM">
                                 <rect key="frame" x="24" y="512" width="327" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-9w-CpM">
+                                <rect key="frame" x="24" y="72" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="404page-complex" translatesAutoresizingMaskIntoConstraints="NO" id="a1P-91-RwQ">
+                                <rect key="frame" x="16" y="104" width="343" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="5Sf-6K-Ocs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,6 +157,7 @@
     </scenes>
     <resources>
         <image name="404page-complex" width="553" height="395"/>
+        <image name="filter_empty" width="24" height="24"/>
         <image name="placeholder" width="300" height="300"/>
     </resources>
 </document>
