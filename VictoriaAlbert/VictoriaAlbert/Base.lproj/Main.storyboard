@@ -85,19 +85,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1P-91-RwQ">
-                                <rect key="frame" x="24" y="72" width="327" height="587"/>
+                                <rect key="frame" x="16" y="104" width="343" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="5Sf-6K-Ocs"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-9w-CpM">
+                                <rect key="frame" x="24" y="72" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxf-wb-LeM">
+                                <rect key="frame" x="24" y="512" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y3u-Np-ax3" firstAttribute="top" secondItem="a1P-91-RwQ" secondAttribute="bottom" constant="8" id="CNe-Om-chZ"/>
-                            <constraint firstItem="a1P-91-RwQ" firstAttribute="leading" secondItem="q7V-d2-Dt6" secondAttribute="leadingMargin" constant="8" id="DRa-53-6yx"/>
-                            <constraint firstItem="a1P-91-RwQ" firstAttribute="top" secondItem="Upm-wB-p8Q" secondAttribute="bottom" constant="8" id="cL7-YJ-Lyk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a1P-91-RwQ" secondAttribute="trailing" constant="8" id="ct0-I9-OqM"/>
+                            <constraint firstItem="MQX-9w-CpM" firstAttribute="top" secondItem="Upm-wB-p8Q" secondAttribute="bottom" constant="8" id="48g-dV-Z7J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MQX-9w-CpM" secondAttribute="trailing" constant="8" id="QEM-4B-7PC"/>
+                            <constraint firstItem="MQX-9w-CpM" firstAttribute="leading" secondItem="q7V-d2-Dt6" secondAttribute="leadingMargin" constant="8" id="Tls-TK-9Pu"/>
+                            <constraint firstItem="a1P-91-RwQ" firstAttribute="top" secondItem="MQX-9w-CpM" secondAttribute="bottom" constant="8" id="Yz3-lg-RYN"/>
+                            <constraint firstItem="Bxf-wb-LeM" firstAttribute="top" secondItem="a1P-91-RwQ" secondAttribute="bottom" constant="8" id="egp-dc-A4s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a1P-91-RwQ" secondAttribute="trailing" id="eml-T2-lEI"/>
+                            <constraint firstItem="Bxf-wb-LeM" firstAttribute="leading" secondItem="q7V-d2-Dt6" secondAttribute="leadingMargin" constant="8" id="gEz-iL-0qT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bxf-wb-LeM" secondAttribute="trailing" constant="8" id="gNJ-TK-Pse"/>
+                            <constraint firstItem="a1P-91-RwQ" firstAttribute="leading" secondItem="q7V-d2-Dt6" secondAttribute="leadingMargin" id="lz4-Yh-Q59"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="recordImage" destination="a1P-91-RwQ" id="rob-nu-P2G"/>
+                        <outlet property="recordLabel" destination="Bxf-wb-LeM" id="7Ek-Q3-6lX"/>
+                        <outlet property="recordTitle" destination="MQX-9w-CpM" id="twS-V6-hBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbM-4E-E8z" userLabel="First Responder" sceneMemberID="firstResponder"/>

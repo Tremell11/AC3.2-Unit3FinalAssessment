@@ -59,19 +59,14 @@ class RecordTableViewController: UITableViewController, UITextFieldDelegate {
 		cell.textLabel?.text = "\(record.object), \(record.date) - \(record.place)"
 		cell.detailTextLabel?.text = record.title
 		
-		if record.imageSmall != "" {
-			APIRequestManager.manager.getData(endPoint: record.imageSmall ) { (data: Data?) in
-				if  let validData = data,
-					let validImage = UIImage(data: validData) {
-					DispatchQueue.main.async {
-						cell.imageView?.image = validImage
-						cell.setNeedsLayout()
-					}
+		APIRequestManager.manager.getData(endPoint: record.imageSmall ) { (data: Data?) in
+			if  let validData = data,
+				let validImage = UIImage(data: validData) {
+				DispatchQueue.main.async {
+					cell.imageView?.image = validImage
+					cell.setNeedsLayout()
 				}
 			}
-		}
-		else {
-			cell.imageView?.image = #imageLiteral(resourceName: "placeholder")
 		}
 		
 		return cell
@@ -89,7 +84,7 @@ class RecordTableViewController: UITableViewController, UITextFieldDelegate {
 				let backItem = UIBarButtonItem()
 				backItem.title = "Back to \"\(searchTerm)\""
 				navigationItem.backBarButtonItem = backItem
-
+				
 			}
 		}
 	}

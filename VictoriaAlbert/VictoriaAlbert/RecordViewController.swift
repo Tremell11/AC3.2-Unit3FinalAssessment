@@ -11,6 +11,8 @@ import UIKit
 class RecordViewController: UIViewController {
 	
 	@IBOutlet weak var recordImage: UIImageView!
+	@IBOutlet weak var recordTitle: UILabel!
+	@IBOutlet weak var recordLabel: UILabel!
 	var recordSelected: Record?
 	
 	override func viewDidLoad() {
@@ -20,10 +22,6 @@ class RecordViewController: UIViewController {
 	
 	func loadData() {
 		guard let validRecord = recordSelected else { return }
-		guard validRecord.imageBig != "" else {
-			self.recordImage.image = #imageLiteral(resourceName: "404page-complex")
-			return
-		}
 		
 		APIRequestManager.manager.getData(endPoint: validRecord.imageBig) { (data: Data?) in
 			if  let validData = data,
@@ -33,6 +31,9 @@ class RecordViewController: UIViewController {
 				}
 			}
 		}
+		
+		self.recordTitle.text = validRecord.title
+		self.recordLabel.text = "\(validRecord.object), \(validRecord.date) - \(validRecord.place)"
 	}
 }
 
