@@ -16,6 +16,7 @@
 		1A2116E31DD4D7B20096774F /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2116E21DD4D7B20096774F /* SearchResultsTableViewController.swift */; };
 		1A2116E61DD4D8550096774F /* MuseumObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2116E51DD4D8550096774F /* MuseumObject.swift */; };
 		1A2116E91DD4E7BD0096774F /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2116E81DD4E7BD0096774F /* RecordDetailViewController.swift */; };
+		1A2116EB1DD4FE470096774F /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2116EA1DD4FE470096774F /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1A2116E21DD4D7B20096774F /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		1A2116E51DD4D8550096774F /* MuseumObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumObject.swift; sourceTree = "<group>"; };
 		1A2116E81DD4E7BD0096774F /* RecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
+		1A2116EA1DD4FE470096774F /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				1A2116E81DD4E7BD0096774F /* RecordDetailViewController.swift */,
 				1A2116E21DD4D7B20096774F /* SearchResultsTableViewController.swift */,
+				1A2116EA1DD4FE470096774F /* ResultTableViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				1A2116E91DD4E7BD0096774F /* RecordDetailViewController.swift in Sources */,
 				1A2116E31DD4D7B20096774F /* SearchResultsTableViewController.swift in Sources */,
+				1A2116EB1DD4FE470096774F /* ResultTableViewCell.swift in Sources */,
 				1A2116E01DD4D5B10096774F /* APIRequestManager.swift in Sources */,
 				1A2116D01DD4D57B0096774F /* ViewController.swift in Sources */,
 				1A2116CE1DD4D57B0096774F /* AppDelegate.swift in Sources */,
@@ -339,6 +343,7 @@
 				1A2116DE1DD4D57B0096774F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

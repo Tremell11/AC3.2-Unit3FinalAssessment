@@ -33,7 +33,6 @@ class RecordDetailViewController: UIViewController {
             }
             imageIdForUrl += String(character)
         }
-        
         let imageUrl = "http://media.vam.ac.uk/media/thira/collection_images/\(imageIdForUrl)/\(record.imageID).jpg"
         print(imageUrl)
         

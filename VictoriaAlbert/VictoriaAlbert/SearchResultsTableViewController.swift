@@ -36,11 +36,46 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as! ResultTableViewCell
         
         let record = results[indexPath.row]
-        cell.textLabel?.text = "\(record.name), \(record.date), \(record.place)"
-        cell.detailTextLabel?.text = record.title
+        cell.nameLabel.text = "\(record.name), \(record.date), \(record.place)"
+        cell.titleLabel.text = record.title
+        
+        var imageIdForUrl = ""
+        
+        for (index,character) in record.imageID.characters.enumerated(){
+            if index == 6 {
+                break
+            }
+            imageIdForUrl += String(character)
+        }
+        
+        let imageUrl = "http://media.vam.ac.uk/media/thira/collection_images/\(imageIdForUrl)/\(record.imageID)_jpg_o.jpg"
+        print(imageUrl)
+        
+        
+        
+        APIRequestManager.manager.getData(from: imageUrl) { (data) in
+            if let validData = data{
+                DispatchQueue.main.async {
+                    cell.resultImageView.image = UIImage(data: validData)
+                  //  cell.setNeedsDisplay()
+                    
+                }
+                
+            }
+        }
+        
+//        DispatchQueue.main.async {
+//            cell.resultImageView.image = self.getImage(for: record.imageID)
+//            cell.setNeedsDisplay()
+//            
+//        }
+//        
+        
+        
+        
         
         return cell
     }
@@ -78,6 +113,31 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
         searchbar.delegate = self
         self.navigationItem.titleView = searchbar
         searchbar.placeholder = "search here...."
+    }
+    
+    
+    func getImage(for imageId:String)-> UIImage?{
+        
+        var recordImage: UIImage? = UIImage()
+        var imageIdForUrl = ""
+        for (index,character) in imageId.characters.enumerated(){
+            if index == 6 {
+                break
+            }
+            imageIdForUrl += String(character)
+        }
+        let imageUrl = "http://media.vam.ac.uk/media/thira/collection_images/\(imageIdForUrl)/\(imageId)_jpg_o.jpg"
+        print(imageUrl)
+        
+        
+        APIRequestManager.manager.getData(from: imageUrl) { (data) in
+            if let validData = data{
+                recordImage = UIImage(data: validData)
+                print("image set")
+                
+            }
+        }
+        return recordImage
     }
     
     
