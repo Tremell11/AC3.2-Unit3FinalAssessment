@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		625695281DF517F7005441AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625695271DF517F7005441AA /* AppDelegate.swift */; };
+		6256952D1DF517F7005441AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6256952B1DF517F7005441AA /* Main.storyboard */; };
+		6256952F1DF517F7005441AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6256952E1DF517F7005441AA /* Assets.xcassets */; };
+		625695321DF517F7005441AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625695301DF517F7005441AA /* LaunchScreen.storyboard */; };
+		6256953D1DF517F7005441AA /* VictoriaAlbertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256953C1DF517F7005441AA /* VictoriaAlbertTests.swift */; };
+		6256954D1DF518E4005441AA /* VictoriaAlbertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256954C1DF518E4005441AA /* VictoriaAlbertTableViewController.swift */; };
+		6256954F1DF5191E005441AA /* VAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256954E1DF5191E005441AA /* VAViewController.swift */; };
+		625695511DF51A6E005441AA /* VictoriaAlbertAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625695501DF51A6E005441AA /* VictoriaAlbertAPIManager.swift */; };
+		625695531DF51ADE005441AA /* VictorialAlbertDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625695521DF51ADE005441AA /* VictorialAlbertDetails.swift */; };
+		625695551DF526BE005441AA /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625695541DF526BE005441AA /* ImageExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		625695391DF517F7005441AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6256951C1DF517F7005441AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 625695231DF517F7005441AA;
+			remoteInfo = VictoriaAlbert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		625695241DF517F7005441AA /* VictoriaAlbert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VictoriaAlbert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		625695271DF517F7005441AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = VictoriaAlbert/AppDelegate.swift; sourceTree = "<group>"; };
+		6256952C1DF517F7005441AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6256952E1DF517F7005441AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = VictoriaAlbert/Assets.xcassets; sourceTree = "<group>"; };
+		625695311DF517F7005441AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		625695331DF517F7005441AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = VictoriaAlbert/Info.plist; sourceTree = "<group>"; };
+		625695381DF517F7005441AA /* VictoriaAlbertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VictoriaAlbertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6256953C1DF517F7005441AA /* VictoriaAlbertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoriaAlbertTests.swift; sourceTree = "<group>"; };
+		6256953E1DF517F7005441AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6256954C1DF518E4005441AA /* VictoriaAlbertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoriaAlbertTableViewController.swift; sourceTree = "<group>"; };
+		6256954E1DF5191E005441AA /* VAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAViewController.swift; sourceTree = "<group>"; };
+		625695501DF51A6E005441AA /* VictoriaAlbertAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoriaAlbertAPIManager.swift; sourceTree = "<group>"; };
+		625695521DF51ADE005441AA /* VictorialAlbertDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictorialAlbertDetails.swift; sourceTree = "<group>"; };
+		625695541DF526BE005441AA /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		625695211DF517F7005441AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		625695351DF517F7005441AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6256951B1DF517F7005441AA = {
+			isa = PBXGroup;
+			children = (
+				625695271DF517F7005441AA /* AppDelegate.swift */,
+				625695261DF517F7005441AA /* VictoriaAlbert */,
+				6256952E1DF517F7005441AA /* Assets.xcassets */,
+				625695331DF517F7005441AA /* Info.plist */,
+				6256953B1DF517F7005441AA /* VictoriaAlbertTests */,
+				625695251DF517F7005441AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		625695251DF517F7005441AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				625695241DF517F7005441AA /* VictoriaAlbert.app */,
+				625695381DF517F7005441AA /* VictoriaAlbertTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		625695261DF517F7005441AA /* VictoriaAlbert */ = {
+			isa = PBXGroup;
+			children = (
+				625695491DF51806005441AA /* Model */,
+				625695481DF51803005441AA /* View */,
+				625695471DF517FE005441AA /* Controller */,
+			);
+			path = VictoriaAlbert;
+			sourceTree = "<group>";
+		};
+		6256953B1DF517F7005441AA /* VictoriaAlbertTests */ = {
+			isa = PBXGroup;
+			children = (
+				6256953C1DF517F7005441AA /* VictoriaAlbertTests.swift */,
+				6256953E1DF517F7005441AA /* Info.plist */,
+			);
+			path = VictoriaAlbertTests;
+			sourceTree = "<group>";
+		};
+		625695471DF517FE005441AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6256954C1DF518E4005441AA /* VictoriaAlbertTableViewController.swift */,
+				6256954E1DF5191E005441AA /* VAViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		625695481DF51803005441AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6256952B1DF517F7005441AA /* Main.storyboard */,
+				625695301DF517F7005441AA /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		625695491DF51806005441AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				625695501DF51A6E005441AA /* VictoriaAlbertAPIManager.swift */,
+				625695521DF51ADE005441AA /* VictorialAlbertDetails.swift */,
+				625695541DF526BE005441AA /* ImageExtension.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		625695231DF517F7005441AA /* VictoriaAlbert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 625695411DF517F7005441AA /* Build configuration list for PBXNativeTarget "VictoriaAlbert" */;
+			buildPhases = (
+				625695201DF517F7005441AA /* Sources */,
+				625695211DF517F7005441AA /* Frameworks */,
+				625695221DF517F7005441AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VictoriaAlbert;
+			productName = VictoriaAlbert;
+			productReference = 625695241DF517F7005441AA /* VictoriaAlbert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		625695371DF517F7005441AA /* VictoriaAlbertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 625695441DF517F7005441AA /* Build configuration list for PBXNativeTarget "VictoriaAlbertTests" */;
+			buildPhases = (
+				625695341DF517F7005441AA /* Sources */,
+				625695351DF517F7005441AA /* Frameworks */,
+				625695361DF517F7005441AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6256953A1DF517F7005441AA /* PBXTargetDependency */,
+			);
+			name = VictoriaAlbertTests;
+			productName = VictoriaAlbertTests;
+			productReference = 625695381DF517F7005441AA /* VictoriaAlbertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6256951C1DF517F7005441AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Tyler Newton";
+				TargetAttributes = {
+					625695231DF517F7005441AA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					625695371DF517F7005441AA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 625695231DF517F7005441AA;
+					};
+				};
+			};
+			buildConfigurationList = 6256951F1DF517F7005441AA /* Build configuration list for PBXProject "VictoriaAlbert" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6256951B1DF517F7005441AA;
+			productRefGroup = 625695251DF517F7005441AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				625695231DF517F7005441AA /* VictoriaAlbert */,
+				625695371DF517F7005441AA /* VictoriaAlbertTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		625695221DF517F7005441AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				625695321DF517F7005441AA /* LaunchScreen.storyboard in Resources */,
+				6256952F1DF517F7005441AA /* Assets.xcassets in Resources */,
+				6256952D1DF517F7005441AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		625695361DF517F7005441AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		625695201DF517F7005441AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				625695531DF51ADE005441AA /* VictorialAlbertDetails.swift in Sources */,
+				625695551DF526BE005441AA /* ImageExtension.swift in Sources */,
+				6256954F1DF5191E005441AA /* VAViewController.swift in Sources */,
+				625695511DF51A6E005441AA /* VictoriaAlbertAPIManager.swift in Sources */,
+				6256954D1DF518E4005441AA /* VictoriaAlbertTableViewController.swift in Sources */,
+				625695281DF517F7005441AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		625695341DF517F7005441AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6256953D1DF517F7005441AA /* VictoriaAlbertTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6256953A1DF517F7005441AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 625695231DF517F7005441AA /* VictoriaAlbert */;
+			targetProxy = 625695391DF517F7005441AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6256952B1DF517F7005441AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6256952C1DF517F7005441AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		625695301DF517F7005441AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				625695311DF517F7005441AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6256953F1DF517F7005441AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		625695401DF517F7005441AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		625695421DF517F7005441AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VictoriaAlbert/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "C4Q-tylerNewton.VictoriaAlbert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		625695431DF517F7005441AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VictoriaAlbert/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "C4Q-tylerNewton.VictoriaAlbert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		625695451DF517F7005441AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VictoriaAlbertTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "C4Q-tylerNewton.VictoriaAlbertTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VictoriaAlbert.app/VictoriaAlbert";
+			};
+			name = Debug;
+		};
+		625695461DF517F7005441AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VictoriaAlbertTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "C4Q-tylerNewton.VictoriaAlbertTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VictoriaAlbert.app/VictoriaAlbert";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6256951F1DF517F7005441AA /* Build configuration list for PBXProject "VictoriaAlbert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6256953F1DF517F7005441AA /* Debug */,
+				625695401DF517F7005441AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		625695411DF517F7005441AA /* Build configuration list for PBXNativeTarget "VictoriaAlbert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				625695421DF517F7005441AA /* Debug */,
+				625695431DF517F7005441AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		625695441DF517F7005441AA /* Build configuration list for PBXNativeTarget "VictoriaAlbertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				625695451DF517F7005441AA /* Debug */,
+				625695461DF517F7005441AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6256951C1DF517F7005441AA /* Project object */;
+}
